@@ -96,9 +96,9 @@ export default async function Home() {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-6">About BMK Builders and Properties</h2>
+              <h2 className="text-3xl font-bold mb-6">About MJ Properties and Constructions</h2>
               <p className="text-gray-600 mb-6">
-                BMK Builders and Properties is a leading real estate company in Bangalore, 
+                MJ Properties and Constructions is a leading real estate company in Bangalore, 
                 specializing in residential and commercial properties. With years of experience 
                 and a commitment to quality, we help you find your dream property.
               </p>
@@ -117,7 +117,7 @@ export default async function Home() {
             <div className="relative h-96">
               <Image
                 src="/images/hero-bg.jpg"
-                alt="BMK Builders Office"
+                alt="MJ Properties and Constructions office"
                 fill
                 className="rounded-lg object-cover"
               />

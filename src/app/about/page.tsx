@@ -1,11 +1,9 @@
-import Image from 'next/image'
-
 export default function AboutPage() {
   return (
     <div className="container py-16">
       {/* Hero Section */}
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6">About BMK Builders and Properties</h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-6">About MJ Properties and Constructions</h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
           Your trusted partner in Bangalore's real estate market for over 5 years. 
           We specialize in residential, commercial, and agricultural properties in and around Bangalore.
@@ -17,7 +15,7 @@ export default function AboutPage() {
         <div>
           <h2 className="text-3xl font-bold mb-6">Our Story</h2>
           <p className="text-gray-600 mb-4">
-            Founded in 2020, BMK Builders and Properties has been at the forefront of Bangalore's real estate development. 
+            Founded in 2020, MJ Properties and Constructions has been at the forefront of Bangalore's real estate development. 
             We started with a simple mission: to help people find their perfect home in this growing city.
           </p>
           <p className="text-gray-600 mb-4">
@@ -54,7 +52,7 @@ export default function AboutPage() {
 
       {/* Why Choose Us */}
       <div className="mb-16">
-        <h2 className="text-3xl font-bold text-center mb-12">Why Choose BMK Builders and Properties?</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">Why Choose MJ Properties and Constructions?</h2>
         <div className="grid md:grid-cols-3 gap-8">
           <div className="text-center">
             <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">

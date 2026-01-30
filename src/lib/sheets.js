@@ -3,6 +3,24 @@
 
 import { getPropertyTypes as localGetPropertyTypes, getLocations as localGetLocations, getAllProperties } from './properties'
 
+const STORAGE_KEY = 'mj-properties'
+
+function getStoredPropertiesData() {
+  if (typeof window === 'undefined') {
+    return null
+  }
+
+  return localStorage.getItem(STORAGE_KEY)
+}
+
+function setStoredPropertiesData(value) {
+  if (typeof window === 'undefined') {
+    return
+  }
+
+  localStorage.setItem(STORAGE_KEY, value)
+}
+
 // Function to get properties from local storage
 export async function fetchPropertiesFromStorage() {
   try {
@@ -14,7 +32,7 @@ export async function fetchPropertiesFromStorage() {
     }
 
     // Get properties from localStorage
-    const storedProperties = localStorage.getItem('bmk-properties')
+    const storedProperties = getStoredPropertiesData()
     console.log('Stored properties from localStorage:', storedProperties ? 'found' : 'not found')
     
     if (storedProperties) {
@@ -62,9 +80,7 @@ export async function fetchPropertiesFromStorage() {
 // Function to save properties to local storage
 export function savePropertiesToStorage(properties) {
   try {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('bmk-properties', JSON.stringify(properties))
-    }
+    setStoredPropertiesData(JSON.stringify(properties))
   } catch (error) {
     console.error('Error saving to local storage:', error)
   }
@@ -77,7 +93,7 @@ export function addPropertyToStorage(newProperty) {
       return false
     }
 
-    const storedProperties = localStorage.getItem('bmk-properties')
+    const storedProperties = getStoredPropertiesData()
     const existingProperties = storedProperties ? JSON.parse(storedProperties) : []
     
     // Get default properties to find the maximum ID
@@ -117,7 +133,7 @@ export function updatePropertyInStorage(propertyId, updatedProperty) {
       return false
     }
 
-    const storedProperties = localStorage.getItem('bmk-properties')
+    const storedProperties = getStoredPropertiesData()
     const existingProperties = storedProperties ? JSON.parse(storedProperties) : []
     console.log('Existing stored properties:', existingProperties.length)
     
@@ -182,7 +198,7 @@ export function deletePropertyFromStorage(propertyId) {
       return false
     }
 
-    const storedProperties = localStorage.getItem('bmk-properties')
+    const storedProperties = getStoredPropertiesData()
     const existingProperties = storedProperties ? JSON.parse(storedProperties) : []
     
     const updatedProperties = existingProperties.filter(property => property.id !== propertyId)

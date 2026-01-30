@@ -6,7 +6,7 @@ export async function POST(request) {
 
     // Email content
     const emailContent = `
-🏠 New Property Inquiry - BMK Builders and Properties
+🏠 New Property Inquiry - MJ Properties and Constructions
 
 👤 Name: ${from_name}
 📞 Phone: ${from_phone}
@@ -14,7 +14,7 @@ export async function POST(request) {
 📋 Subject: ${subject}
 💬 Message: ${message}
 
-This inquiry was sent from the BMK Builders and Properties website.
+This inquiry was sent from the MJ Properties and Constructions website.
     `
 
     // EmailJS configuration with real credentials

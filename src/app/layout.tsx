@@ -19,9 +19,9 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'BMK Builders and Properties | Find Your Dream Home in Bangalore',
-  description: 'Discover your perfect property with BMK Builders and Properties. Browse through a wide range of residential and commercial properties in Bangalore.',
-  keywords: 'real estate, property, homes for sale, Bangalore, BMK Builders, apartments, villas, commercial properties',
+  title: 'MJ Properties and Constructions | Find Your Dream Home in Bangalore',
+  description: 'Discover your perfect property with MJ Properties and Constructions. Browse through a wide range of residential and commercial properties in Bangalore.',
+  keywords: 'real estate, property, homes for sale, Bangalore, MJ Properties, apartments, villas, commercial properties',
 }
 
 export default function RootLayout({

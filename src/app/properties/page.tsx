@@ -3,17 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { getAllPropertiesFromSheet, getLocations, clearPropertiesCache } from '@/lib/sheets'
-
-const isLandAsset = (property) => {
-  const title = property.title?.toLowerCase() || ''
-  return (
-    property.type === 'Plot' ||
-    title.includes('plot') ||
-    title.includes('site') ||
-    title.includes('land')
-  )
-}
+import { getAllPropertiesFromSheet, getPropertyTypes, getLocations, clearPropertiesCache } from '@/lib/sheets'
 
 export default function PropertiesPage() {
   const [allProperties, setAllProperties] = useState([])
@@ -30,10 +20,8 @@ export default function PropertiesPage() {
         // Clear cache to ensure fresh data
         clearPropertiesCache()
         const properties = await getAllPropertiesFromSheet()
-        const landInventory = properties.filter(property => property.bedrooms === 0)
-        const limitedProperties = landInventory.slice(0, 5)
-        setAllProperties(limitedProperties)
-        setFilteredProperties(limitedProperties)
+        setAllProperties(properties)
+        setFilteredProperties(properties)
         setLoading(false)
       } catch (error) {
         console.error('Error loading properties:', error)
@@ -72,13 +60,13 @@ export default function PropertiesPage() {
         const price = parseInt(property.price.replace(/[^\d]/g, ''))
         switch (priceRange) {
           case 'under-50':
-            return price < 3000 sq ft
+            return price < 5000000
           case '50-100':
-            return price >= 3000 sq ft && price < 4000 sq ft
+            return price >= 5000000 && price < 10000000
           case '100-200':
-            return price >= 4000 sq ft && price < 5000 sq ft
+            return price >= 10000000 && price < 20000000
           case 'over-200':
-            return price >= 5000 sq ft
+            return price >= 20000000
           default:
             return true
         }
@@ -88,6 +76,7 @@ export default function PropertiesPage() {
     setFilteredProperties(filtered)
   }, [allProperties, searchTerm, selectedType, selectedLocation, priceRange])
 
+  const propertyTypes = getPropertyTypes()
   const locations = getLocations()
 
   const clearFilters = () => {
@@ -113,8 +102,8 @@ export default function PropertiesPage() {
       {/* Header */}
       <div className="bg-white shadow-sm border-b">
         <div className="container mx-auto px-4 py-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Land & Plots</h1>
-          <p className="text-xl text-gray-600">Developed plots, sites, agricultural land, and ready-to-construct spaces across Bangalore and kolar.</p>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">All Properties</h1>
+          <p className="text-xl text-gray-600">Find your perfect property in Bangalore</p>
         </div>
       </div>
 
@@ -130,7 +119,7 @@ export default function PropertiesPage() {
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder="Search plots, survey numbers, or localities..."
+                placeholder="Search properties..."
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
               />
             </div>
@@ -144,7 +133,7 @@ export default function PropertiesPage() {
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
               >
                 <option value="">All Types</option>
-                {[...new Set(allProperties.map(property => property.type))].map((type) => (
+                {propertyTypes.map((type) => (
                   <option key={type} value={type}>{type}</option>
                 ))}
               </select>
@@ -196,7 +185,7 @@ export default function PropertiesPage() {
         {/* Results */}
         <div className="mb-8">
           <p className="text-gray-600">
-            Showing {filteredProperties.length} of {allProperties.length} land assets
+            Showing {filteredProperties.length} of {allProperties.length} properties
           </p>
           {searchTerm && (
             <p className="text-sm text-gray-500 mt-1">
@@ -281,7 +270,7 @@ export default function PropertiesPage() {
             <svg className="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
             </svg>
-            <h3 className="text-lg font-medium text-gray-900 mb-2">No opportunities found</h3>
+            <h3 className="text-lg font-medium text-gray-900 mb-2">No properties found</h3>
             <p className="text-gray-500">Try adjusting your search criteria or filters.</p>
           </div>
         )}

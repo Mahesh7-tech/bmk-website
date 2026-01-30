@@ -9,7 +9,7 @@ export default function AdminLink() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
 
   // Simple password protection (you can change this password)
-  const ADMIN_PASSWORD = 'bmkadmin123'
+  const ADMIN_PASSWORD = 'mjadmin123'
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
@@ -104,7 +104,7 @@ export default function AdminLink() {
               </button>
             </div>
           </form>
-          <p className="text-xs text-gray-500 mt-2">Password: bmkadmin123</p>
+          <p className="text-xs text-gray-500 mt-2">Password: mjadmin123</p>
         </div>
       )}
     </div>

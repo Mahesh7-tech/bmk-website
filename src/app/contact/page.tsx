@@ -73,7 +73,7 @@ export default function ContactPage() {
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Get in touch with BMK Builders and Properties. We're here to help you find your perfect property 
+          Get in touch with MJ Properties and Constructions. We're here to help you find your perfect property 
           in Bangalore and surrounding areas.
         </p>
       </div>
@@ -89,10 +89,10 @@ export default function ContactPage() {
           </div>
           <h3 className="text-xl font-semibold mb-2">Visit Our Office</h3>
           <p className="text-gray-600">
-            BMK Builders and Properties<br />
-            07 12th cross, near jayanna circle<br />
-            Rajarajeshwari Nagara, Bengaluru<br />
-            Karnataka - 560098
+            MJ Properties and Constructions<br />
+            12th cross, near hopeform<br />
+            Whitefield, Bengaluru<br />
+            Karnataka - 560066
           </p>
         </div>
 
@@ -104,9 +104,8 @@ export default function ContactPage() {
           </div>
           <h3 className="text-xl font-semibold mb-2">Call Us</h3>
           <p className="text-gray-600">
-            +91 8147372791<br />
-            +91 7026401268<br />
-            +91 9538890395
+            <span className="block text-2xl font-semibold text-gray-900">+91 95388 90395</span>
+            Primary number
           </p>
         </div>
 
@@ -118,9 +117,7 @@ export default function ContactPage() {
           </div>
           <h3 className="text-xl font-semibold mb-2">Email Us</h3>
           <p className="text-gray-600">
-            info@bmkbuilders.com<br />
-            sales@bmkbuilders.com<br />
-            support@bmkbuilders.com
+            maheshs8147@gmail.com
           </p>
         </div>
       </div>
@@ -241,12 +238,12 @@ export default function ContactPage() {
         <div>
           <h2 className="text-2xl font-bold mb-6">Our Office Location</h2>
           <div className="bg-gray-100 rounded-lg p-6 mb-6">
-            <h3 className="text-lg font-semibold mb-4">BMK Builders and Properties</h3>
+            <h3 className="text-lg font-semibold mb-4">MJ Properties and Constructions</h3>
             <div className="space-y-2 text-gray-600">
-              <p>📍 07 12th cross, near jayanna circle</p>
-              <p>🏢 Rajarajeshwari Nagara, Bengaluru</p>
-              <p>📞 +91 8147372791</p>
-              <p>📧 info@bmkbuilders.com</p>
+              <p>📍 12th cross, near hopeform</p>
+              <p>🏢 Whitefield, Bengaluru</p>
+              <p>📞 +91 95388 90395</p>
+              <p>📧 maheshs8147@gmail.com</p>
             </div>
           </div>
 
@@ -259,20 +256,15 @@ export default function ContactPage() {
         <div className="grid md:grid-cols-4 gap-6">
           <div className="text-center">
             <h3 className="font-semibold mb-2">WhatsApp</h3>
-            <p className="text-gray-600">+91 8147372791</p>
+            <p className="text-gray-600">+91 95388 90395</p>
           </div>
           <div className="text-center">
             <h3 className="font-semibold mb-2">Facebook</h3>
-            <p className="text-gray-600">@SaiRamProperties</p>
+            <p className="text-gray-600">@mjpropertiesandconstructions</p>
           </div>
           <div className="text-center">
             <h3 className="font-semibold mb-2">Instagram</h3>
-            <p className="text-gray-600">@sairamproperties</p>
-          </div>
-          <div className="text-center">
-            <h3 className="font-semibold mb-2">Office Hours</h3>
-            <p className="text-gray-600">Mon - Sat: 9:00 AM - 7:00 PM</p>
-            <p className="text-gray-600">Sunday: 10:00 AM - 5:00 PM</p>
+            <p className="text-gray-600">@mjpropertiesandconstructions</p>
           </div>
         </div>
       </div>

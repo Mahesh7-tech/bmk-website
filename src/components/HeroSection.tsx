@@ -40,7 +40,7 @@ export default function HeroSection() {
       <div className="container relative z-10">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Welcome to BMK Builders and Properties
+            Welcome to MJ Properties and Constructions
           </h1>
           <p className="text-xl text-gray-200 mb-8">
             Your trusted partner in finding the perfect property. With years of experience

@@ -1,4 +1,4 @@
-# BMK Builders and Properties Website
+# MJ Properties and Constructions Website
 
 A modern, responsive real estate website built with Next.js, React, and Tailwind CSS.
 
@@ -146,8 +146,8 @@ npm start
 
 ## 📱 Contact Information
 
-- **Phone:** +91 8147372791
-- **Email:** info@bmkbuilders.com
+- **Phone:** +91 95388 90395
+- **Email:** info@mjpropertiesandconstructions.com
 - **Office:** 07 12th cross, near jayanna circle, Rajarajeshwari Nagara, Bengaluru, Karnataka 560098
 - **Hours:** Mon-Sat: 9:00 AM - 7:00 PM, Sunday: 10:00 AM - 5:00 PM
 
@@ -199,8 +199,8 @@ The website is optimized for search engines with:
 ## 📞 Support
 
 For technical support or questions about managing properties, contact:
-- **Email:** support@bmkbuilders.com
-- **Phone:** +91 8147372791
+- **Email:** support@mjpropertiesandconstructions.com
+- **Phone:** +91 95388 90395
 
 ---
 
