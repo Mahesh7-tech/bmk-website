@@ -168,7 +168,7 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
                     <div className="flex items-center space-x-3">
                       <div className="relative w-16 h-16">
                         <Image
-                          src={similarProperty.image}
+                          src={similarProperty.image ?? '/images/property1.jpg'}
                           alt={similarProperty.title}
                           fill
                           className="rounded object-cover"
