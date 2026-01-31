@@ -43,10 +43,14 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
         setProperty(propertyData)
         
         // Load similar properties
-        const allProperties = await getAllPropertiesFromSheet()
-        const similar = allProperties
-          .filter(p => p.type === propertyData.type && p.id !== propertyData.id)
-          .slice(0, 3)
+        const allProperties = await getAllPropertiesFromSheet() as Property[]
+        const similar: Property[] = []
+        for (const prop of allProperties) {
+          if (prop.type === propertyData.type && prop.id !== propertyData.id) {
+            similar.push(prop)
+            if (similar.length >= 3) break
+          }
+        }
         setSimilarProperties(similar)
         
         setLoading(false)
