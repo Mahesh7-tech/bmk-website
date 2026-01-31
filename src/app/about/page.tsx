@@ -92,10 +92,10 @@ export default function AboutPage() {
 
       {/* Bangalore Market Insights */}
       <div className="bg-gray-50 rounded-lg p-8 mb-16">
-        <h2 className="text-3xl font-bold text-center mb-8">Bangalore Real Estate Market</h2>
+        <h2 className="text-3xl font-bold text-center mb-8">Real Estate Market Around Bangalore</h2>
         <div className="grid md:grid-cols-2 gap-8">
           <div>
-            <h3 className="text-xl font-semibold mb-4">Why Invest in Bangalore?</h3>
+            <h3 className="text-xl font-semibold mb-4">Why Invest in and around Bangalore?</h3>
             <ul className="space-y-2 text-gray-600">
               <li>• IT Hub with major tech companies</li>
               <li>• Excellent infrastructure and connectivity</li>
@@ -108,16 +108,16 @@ export default function AboutPage() {
             </ul>
           </div>
           <div>
-            <h3 className="text-xl font-semibold mb-4">Prime Investment Areas</h3>
+            <h3 className="text-xl font-semibold mb-4">Prime Areas</h3>
             <ul className="space-y-2 text-gray-600">
+              <li>• Mysore Road - High-End Market</li>
               <li>• Whitefield - IT Corridor</li>
+              <li>• Kanakapura Road - Upcoming Development</li>
+              <li>• Kolar Road - Industrial Investment</li>
+              <li>• Nelamangala Road - Premium Residential</li>
               <li>• Electronic City - Tech Hub</li>
               <li>• Sarjapur Road - Premium Residential</li>
-              <li>• HSR Layout - Young Professionals</li>
-              <li>• Koramangala - Commercial Hub</li>
-              <li>• Indiranagar - High-End Market</li>
               <li>• Yelahanka - Upcoming Development</li>
-              <li>• Peenya - Industrial Investment</li>
             </ul>
           </div>
         </div>

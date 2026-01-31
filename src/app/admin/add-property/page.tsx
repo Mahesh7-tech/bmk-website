@@ -34,7 +34,7 @@ export default function AddProperty() {
   const propertyTypes = getPropertyTypes()
   const locations = getLocations()
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: any) => {
     const { name, value, type, checked } = e.target
     setFormData(prev => ({
       ...prev,
