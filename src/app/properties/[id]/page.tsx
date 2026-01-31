@@ -227,10 +227,10 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
                 <span className="text-gray-600">Type:</span>
                 <span>{property.type}</span>
               </div>
-              {property.bedrooms > 0 && (
+              {(property.bedrooms ?? 0) > 0 && (
                 <div className="flex justify-between">
                   <span className="text-gray-600">Bedrooms:</span>
-                  <span>{property.bedrooms}</span>
+                  <span>{property.bedrooms ?? 0}</span>
                 </div>
               )}
               <div className="flex justify-between">
