@@ -7,13 +7,32 @@ import { getPropertyTypes, getLocations } from '@/lib/properties'
 import { getPropertyByIdFromSheet, updatePropertyInStorage, clearPropertiesCache } from '@/lib/sheets'
 
 export default function EditProperty() {
+  type PropertyFormData = {
+    title: string
+    location: string
+    price: string
+    type: string
+    bedrooms: string
+    bathrooms: string
+    area: string
+    description: string
+    dimensions: string
+    status: string
+    possession: string
+    furnishing: string
+    featured: boolean
+    image: string
+    features: string[]
+    amenities: string[]
+  }
+
   const router = useRouter()
   const params = useParams()
   const propertyId = parseInt(Array.isArray(params.id) ? params.id[0] : (params.id ?? ''))
   
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<PropertyFormData>({
     title: '',
     location: '',
     price: '',
