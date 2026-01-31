@@ -53,7 +53,7 @@ export default function AddProperty() {
   const propertyTypes = getPropertyTypes()
   const locations = getLocations()
 
-  const handleInputChange = (e: any) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type, checked } = e.target
     setFormData(prev => ({
       ...prev,

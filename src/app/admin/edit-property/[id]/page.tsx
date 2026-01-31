@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { useRouter, useParams } from 'next/navigation'
+import React, { useState, useEffect } from 'react'
+import { useRouter, useParams } from 'next/navigation' 
 import Link from 'next/link'
 import { getPropertyTypes, getLocations } from '@/lib/properties'
 import { getPropertyByIdFromSheet, updatePropertyInStorage, clearPropertiesCache } from '@/lib/sheets'
@@ -78,7 +78,7 @@ export default function EditProperty() {
     }
   }, [propertyId, router])
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type, checked } = e.target
     setFormData(prev => ({
       ...prev,
@@ -96,7 +96,7 @@ export default function EditProperty() {
     }
   }
 
-  const removeFeature = (index) => {
+  const removeFeature = (index: number) => {
     setFormData(prev => ({
       ...prev,
       features: prev.features.filter((_, i) => i !== index)
@@ -113,14 +113,14 @@ export default function EditProperty() {
     }
   }
 
-  const removeAmenity = (index) => {
+  const removeAmenity = (index: number) => {
     setFormData(prev => ({
       ...prev,
       amenities: prev.amenities.filter((_, i) => i !== index)
     }))
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setSaving(true)
 
