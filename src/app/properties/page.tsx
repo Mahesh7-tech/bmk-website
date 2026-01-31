@@ -54,9 +54,9 @@ export default function PropertiesPage() {
     if (searchTerm) {
       const term = searchTerm.toLowerCase()
       filtered = filtered.filter(property =>
-        property.title.toLowerCase().includes(term) ||
-        property.location.toLowerCase().includes(term) ||
-        property.description.toLowerCase().includes(term)
+        (property.title ?? '').toLowerCase().includes(term) ||
+        (property.location ?? '').toLowerCase().includes(term) ||
+        (property.description ?? '').toLowerCase().includes(term)
       )
     }
 
