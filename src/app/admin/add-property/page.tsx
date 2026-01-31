@@ -54,10 +54,12 @@ export default function AddProperty() {
   const locations = getLocations()
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value, type, checked } = e.target
+    const target = e.target as HTMLInputElement
+    const { name, value, type } = target
+    const fieldValue = type === 'checkbox' ? target.checked : value
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: fieldValue
     }))
   }
 
