@@ -9,7 +9,7 @@ import { getPropertyByIdFromSheet, updatePropertyInStorage, clearPropertiesCache
 export default function EditProperty() {
   const router = useRouter()
   const params = useParams()
-  const propertyId = parseInt(params.id)
+  const propertyId = parseInt(Array.isArray(params.id) ? params.id[0] : (params.id ?? ''))
   
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)

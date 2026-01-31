@@ -1,15 +1,34 @@
 'use client'
 
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+import React, { useState } from 'react'
+import { useRouter } from 'next/navigation' 
 import Link from 'next/link'
 import { getPropertyTypes, getLocations } from '@/lib/properties'
 import { addPropertyToStorage, clearPropertiesCache } from '@/lib/sheets'
 
 export default function AddProperty() {
+  type PropertyFormData = {
+    title: string
+    location: string
+    price: string
+    type: string
+    bedrooms: string
+    bathrooms: string
+    area: string
+    description: string
+    dimensions: string
+    status: string
+    possession: string
+    furnishing: string
+    featured: boolean
+    image: string
+    features: string[]
+    amenities: string[]
+  }
+
   const router = useRouter()
   const [loading, setLoading] = useState(false)
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<PropertyFormData>({
     title: '',
     location: '',
     price: '',
@@ -52,7 +71,7 @@ export default function AddProperty() {
     }
   }
 
-  const removeFeature = (index) => {
+  const removeFeature = (index: number) => {
     setFormData(prev => ({
       ...prev,
       features: prev.features.filter((_, i) => i !== index)
@@ -69,14 +88,14 @@ export default function AddProperty() {
     }
   }
 
-  const removeAmenity = (index) => {
+  const removeAmenity = (index: number) => {
     setFormData(prev => ({
       ...prev,
       amenities: prev.amenities.filter((_, i) => i !== index)
     }))
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
 
