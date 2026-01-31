@@ -3,8 +3,20 @@ import Link from 'next/link'
 import HeroSection from '@/components/HeroSection'
 import { getFeaturedPropertiesFromSheet } from '@/lib/sheets'
 
+type Property = {
+  id: number
+  title: string
+  location: string
+  price: string
+  type: string
+  area?: string
+  image?: string
+  description?: string
+  featured?: boolean
+} 
+
 export default async function Home() {
-  const featuredProperties = await getFeaturedPropertiesFromSheet()
+  const featuredProperties = await getFeaturedPropertiesFromSheet() as Property[]
 
   return (
     <main>
