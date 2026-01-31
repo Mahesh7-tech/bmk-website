@@ -8,8 +8,29 @@ import { getPropertyByIdFromSheet, getAllPropertiesFromSheet } from '@/lib/sheet
 import { notFound } from 'next/navigation'
 
 export default function PropertyPage({ params }: { params: { id: string } }) {
-  const [property, setProperty] = useState(null)
-  const [similarProperties, setSimilarProperties] = useState([])
+  type Property = {
+    id: number
+    title: string
+    location?: string
+    price?: string
+    type?: string
+    area?: string
+    image?: string
+    gallery?: string[]
+    featured?: boolean
+    description?: string
+    features?: string[]
+    amenities?: string[]
+    status?: string
+    possession?: string
+    bedrooms?: number
+    dimensions?: string
+    approvals?: string
+    khata?: string
+  }
+
+  const [property, setProperty] = useState<Property | null>(null)
+  const [similarProperties, setSimilarProperties] = useState<Property[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -77,7 +98,7 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
           {/* Property Image */}
           <div className="relative h-96 mb-8">
             <Image
-              src={property.image}
+              src={property.image ?? '/images/property1.jpg'}
               alt={property.title}
               fill
               className="rounded-lg object-cover"
