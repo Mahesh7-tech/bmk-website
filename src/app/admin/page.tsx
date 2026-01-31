@@ -5,7 +5,24 @@ import Link from 'next/link'
 import { getAllPropertiesFromSheet, getPropertyTypes, getLocations, deletePropertyFromStorage, clearPropertiesCache } from '@/lib/sheets'
 
 export default function AdminDashboard() {
-  const [properties, setProperties] = useState([])
+  type Property = {
+    id: number
+    title: string
+    location: string
+    price: string
+    type: string
+    area: string
+    image?: string
+    featured?: boolean
+    description?: string
+    features?: string[]
+    amenities?: string[]
+    dimensions?: string
+    status?: string
+    possession?: string
+  }
+
+  const [properties, setProperties] = useState<Property[]>([])
   const [loading, setLoading] = useState(true)
 
   const loadProperties = async () => {
