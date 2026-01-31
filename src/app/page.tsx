@@ -31,7 +31,7 @@ export default async function Home() {
               <div key={property.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="relative h-48 mb-4">
                   <Image
-                    src={property.image}
+                    src={property.image ?? '/images/property1.jpg'}
                     alt={property.title}
                     fill
                     className="rounded-lg object-cover"
