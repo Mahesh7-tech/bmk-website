@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -11,7 +11,7 @@ export default function ContactPage() {
     message: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState(null)
+  const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
