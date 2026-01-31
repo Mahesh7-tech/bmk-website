@@ -6,8 +6,24 @@ import Link from 'next/link'
 import { getAllPropertiesFromSheet, getPropertyTypes, getLocations, clearPropertiesCache } from '@/lib/sheets'
 
 export default function PropertiesPage() {
-  const [allProperties, setAllProperties] = useState([])
-  const [filteredProperties, setFilteredProperties] = useState([])
+  type Property = {
+    id: number
+    title: string
+    location?: string
+    price?: string
+    type?: string
+    area?: string
+    image?: string
+    description?: string
+    featured?: boolean
+    features?: string[]
+    amenities?: string[]
+    status?: string
+    possession?: string
+  }
+
+  const [allProperties, setAllProperties] = useState<Property[]>([])
+  const [filteredProperties, setFilteredProperties] = useState<Property[]>([])
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedType, setSelectedType] = useState('')
@@ -57,7 +73,7 @@ export default function PropertiesPage() {
     // Filter by price range
     if (priceRange) {
       filtered = filtered.filter(property => {
-        const price = parseInt(property.price.replace(/[^\d]/g, ''))
+        const price = parseInt((property.price ?? '').replace(/[^\\d]/g, '')) || 0
         switch (priceRange) {
           case 'under-50':
             return price < 5000000
@@ -201,7 +217,7 @@ export default function PropertiesPage() {
               <div key={property.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="relative h-48 mb-4">
                   <Image
-                    src={property.image}
+                    src={property.image ?? '/images/property1.jpg'}
                     alt={property.title}
                     fill
                     className="rounded-lg object-cover"
