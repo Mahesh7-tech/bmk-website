@@ -25,7 +25,7 @@ export default function AdminDashboard() {
     loadProperties()
   }, [])
 
-  const handleDeleteProperty = async (propertyId) => {
+  const handleDeleteProperty = async (propertyId: number) => {
     if (confirm('Are you sure you want to delete this property?')) {
       const success = deletePropertyFromStorage(propertyId)
       if (success) {
