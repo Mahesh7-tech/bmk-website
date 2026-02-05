@@ -1,0 +1,7 @@
+User-agent: *
+Disallow:
+
+# Sitemap location (served at /sitemap.xml)
+Sitemap: /sitemap.xml
+
+# If you have a staging site, add a Disallow rule for it here.
